@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <!--SQL Dialect-->
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+    <!--Configurações sobre a conexão a base de dados-->
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/hospital_db</property>
+    <property name="hibernate.connection.username">root</property>
+    <!--
+            O seguinte parametro é usado caso a base de dados contenha alguma Senha/Password
+            <property name="hibernate.connection.password"></property>
+        -->
+    <!--Exibir todas as Querys SQL na Saida padrão-->
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.format_sql">true</property>
+    <property name="hibernate.connection.autocommit">false</property>
+    <!--Apagar ou recriar a base de dados na sua inicialização-->
+    <property name="hibernate.hbm2ddl.auto">create</property>
+    <!--Outras configurações-->
+    <property name="hibernate.enable_lazy_load_no_trans">true</property>
+    <property name="connection.pool_size">1</property>
+    <property name="current_session_context_class">thread</property>
+    <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+    <property name="hibernate.jdbc.batch_size">30</property>
+    <property name="hibernate.order_updates">true</property>
+    <property name="hibernate.connection.isolation">2</property>
+    <property name="hibernate.transaction.flush_before_completion">true</property>
+    
+    
+    <!--Mapeiamento das classes para a persistencia-->
+    <mapping class="org.mozdevz.grupo3.model.LogUtilizador"/>
+    <mapping class="org.mozdevz.grupo3.model.LogUtilizadorId"/>
+    <mapping class="org.mozdevz.grupo3.model.Previlegio"/>
+    <mapping class="org.mozdevz.grupo3.model.Utilizador"/>
+    <mapping class="org.mozdevz.grupo3.model.UtilizadorId"/>
+    <mapping class="org.mozdevz.grupo3.model.Consulta"/>
+    
+    <mapping class="org.mozdevz.grupo3.model.Contacto"/>
+    <mapping class="org.mozdevz.grupo3.model.Departamento"/>
+    <mapping class="org.mozdevz.grupo3.model.Doente"/>
+    <mapping class="org.mozdevz.grupo3.model.Doenca"/>
+    <mapping class="org.mozdevz.grupo3.model.Endereco"/>
+    <mapping class="org.mozdevz.grupo3.model.Expediente"/>
+    
+    <mapping class="org.mozdevz.grupo3.model.Pessoa"/>
+    <mapping class="org.mozdevz.grupo3.model.Funcionario"/>
+    <mapping class="org.mozdevz.grupo3.model.Medico"/>
+    <mapping class="org.mozdevz.grupo3.model.Parente"/>
+    <mapping class="org.mozdevz.grupo3.model.Secretaria"/>
+    
+    
+  </session-factory>
+</hibernate-configuration>

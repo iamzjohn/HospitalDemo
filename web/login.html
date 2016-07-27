@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/estilo.css" />
+    </head>
+    <body>
+        <div class="container" style="max-width: 500px; margin-top: 100px">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4 style="text-align: center"><b>Login - Hospital X</b></h4></div>
+                <div class="panel-body">
+                    
+                <!-- mensagem de satisfaca do login do user  -->
+<!--                <?php if(isset($mensagem)) {?>
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <strong>Aviso!</strong> <?php echo $mensagem;?>.
+                    </div>
+                <?php }?>-->
+
+                    <form class="form-horizontal" method="post" action="/HospitalDemo/entrar">
+                        <div class="form-group">
+                            <label for="username" class="col-sm-3 control-label">Username</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-sm-3 control-label">Password</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <button type="submit" class="btn btn-large btn-primary">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="assets/js/jquery.min.js" ></script>
+        <script type="text/javascript" src="'assets/bootstrap/js/bootstrap.min.js" ></script>
+        
+    </body>
+</html>
