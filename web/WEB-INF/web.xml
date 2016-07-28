@@ -4,9 +4,17 @@
         <servlet-name>Login</servlet-name>
         <servlet-class>org.mozdevz.grupo3.controller.Pagina</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Admin_login</servlet-name>
+        <servlet-class>org.mozdevz.grupo3.controller.admin.Login</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/entrar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Admin_login</servlet-name>
+        <url-pattern>/Admin_login</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -16,8 +24,4 @@
     <welcome-file-list>
         <welcome-file>login.html</welcome-file>
     </welcome-file-list>
-    
-    <listener>
-        <listener-class>org.mozdevz.grupo3.MyContextListener</listener-class>
-    </listener>
 </web-app>

@@ -25,8 +25,9 @@ public class NewHibernateUtil {
 //            sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
 
 //                File hibernateConfigFile = new File(System.getProperty("user.dir")+ "/hibernate.cfg.xml");
-                File hibernateConfigFile = new File("hibernate.cfg.xml");
-                Configuration configuration  = new Configuration().configure(hibernateConfigFile);
+//                File hibernateConfigFile = new File("hibernate.cfg.xml");
+//                Configuration configuration  = new Configuration().configure(hibernateConfigFile);
+                Configuration configuration  = new Configuration().configure();
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());
         } catch (Throwable ex) {

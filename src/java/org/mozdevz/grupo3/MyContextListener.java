@@ -10,7 +10,7 @@ public class MyContextListener implements ServletContextListener{
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+//        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
 //        new DAOAbstracto<Object>(sessionFactory.openSession());
     }
 
