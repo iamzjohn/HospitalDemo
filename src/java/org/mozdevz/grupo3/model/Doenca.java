@@ -14,6 +14,12 @@ public class Doenca implements Serializable{
     
     private Doenca(){}
 
+    public Doenca(String descricao) {
+        this.descricao = descricao;
+    }
+
+    
+    
      @Id
     @GenericGenerator(name = "gerador-chave", strategy = "increment")
     @GeneratedValue(generator = "gerador-chave")

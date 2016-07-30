@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -20,6 +21,7 @@ public class Departamento implements Serializable{
     private String descricao;
     private List<Secretaria> secretarias = new ArrayList<>();
     private List<Medico> medicos = new ArrayList<>();
+    private List<Consulta> consultas = new ArrayList<>();
 
     public Departamento() {
     }
@@ -43,7 +45,7 @@ public class Departamento implements Serializable{
         this.descricao = descricao;
     }
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "secretaria_id")
     public List<Secretaria> getSecretarias() {
         return secretarias;
@@ -53,7 +55,7 @@ public class Departamento implements Serializable{
         this.secretarias = secretarias;
     }
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "medico_id")
     public List<Medico> getMedicos() {
         return medicos;
@@ -62,6 +64,19 @@ public class Departamento implements Serializable{
     public void setMedicos(List<Medico> medicos) {
         this.medicos = medicos;
     }
+    
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "consulta_id")
+    public List<Consulta> getConsultas() {
+        return consultas;
+    }
+
+    public void setConsultas(List<Consulta> consultas) {
+        this.consultas = consultas;
+    }
+    
+    
+    
 
     @Override
     public int hashCode() {

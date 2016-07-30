@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <title>Grupo 3 Ninjas Hospital</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Bootstrap CSS -->
+        <!-- <link rel="stylesheet" href="../assets/bootstrap_4/bower_components/bootstrap/dist/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap.min.css" />
+        
+        <!--CSS Customizado -->
+        <link rel="stylesheet" href="../assets/css/style.css"> 
+   </head>
+   <body>
+        <section>
+           <nav class="navbar navbar-light  boldado navbar-full" style="background-color: #e3f2fd;">
+                <a class="navbar-brand" href="#">Hospital</a>
+               <ul class="nav navbar-nav">
+                             <li class="nav-item active">
+                                <a class="nav-link" href="#">Início<span class="sr-only">(current)</span></a>
+                            </li>
+                       <li class=" nav-item">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="medicos">Médicos<span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="medicos">
+                           <a href="#" class="dropdown-item">Adicionar um  Médico</a>
+                           <a href="#" class="dropdown-item">Pesquisar um Médico</a>
+                           <a href="#" class="dropdown-item">Eliminar um  Médico</a>
+                       </div>
+                       </li>
+                     <li class=" nav-item">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="enfermeiro">Enfermeiros<span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="enfermeiro">
+                           <a href="#" class="dropdown-item">Adicionar um  Enfermeiro</a>
+                           <a href="#" class="dropdown-item">Pesquisar um Enfermeiro</a>
+                           <a href="#" class="dropdown-item">Eliminar um  Enfermeiro</a>
+                       </div>
+                       </li>
+                   <li class=" nav-item">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="administrador">Administradores<span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="administrador">
+                           <a href="#" class="dropdown-item">Adicionar um  Administrador</a>
+                           <a href="#" class="dropdown-item">Pesquisar um Administrador</a>
+                           <a href="#" class="dropdown-item">Eliminar um Administrador</a>
+                       </div>
+                       </li>
+                   <li class=" nav-item">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="utilizador">Utilizadores<span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="utilizador">
+                           <a href="#" class="dropdown-item">Listar todos Utilizadores</a>
+                           <a href="#" class="dropdown-item">Pesquisar um Utilizador</a>
+                           <a href="#" class="dropdown-item">Eliminar um Utilizador</a>
+                       </div>
+                       </li>
+                       <li class="nav-item">
+                              <a class="nav-link" href="#">Estatísticas</a>
+                        </li>
+                     <li class="nav-item">
+                         <a class="nav-link" href="#">Sobre nós</a>
+                   </li>
+            </ul>
+    
+           <form class="form-inline pull-right">
+                 <input class="form-control" type="text" placeholder="Pesquisar">
+                <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+           </form>
+           </nav>
+    </section>
+       
+       <section id="admin" >
+          <div class="section-content">
+               <div class="container">
+                   <div class="col-sm-10">
+                      <div id="Texto-de-descricao">
+                          <h2 class="boldado">Bem vindo Caro Administrador!</h2>
+                          <p class="fonteDescription">Abaixo estão as funcionalidades dísponiveis para o seu trabalho, esperamos que fique satisfeito!</p>
+                     </div>
+                   
+                   </div>
+                   
+               </div>
+          </div>  
+       
+      </section><br>
+
+      <div class="container">
+      
+        <div id="adicionar_funcionario" class="row">
+
+          <h2 class="boldadoPersonalizado" >Registrar um Funcionário(Medico,Recepcionista,Enfermeiro) </h2><br>
+          <form>
+            <div class="col-lg-9 col-sm-9">
+              
+              <div class="panel-group" id="accordion">
+
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                          Dados Pessoais
+                        </a>
+                      </h3>
+                    </div>
+
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                      <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Nome: </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="nome" placeholder="Nome">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Apelido: </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="apelido"placeholder="Apelido">
+                            </div>
+                        </div>
+                        <div class="form-group novo_tipo" >
+                            <label class="col-sm-3 control-label">Outro Tipo : </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="tipo_id_writen" placeholder="Nova Categoria">
+                            </div>
+                        </div>
+                        <div class="form-group antigo_tipo">
+                            <label class="col-sm-3 control-label">Tipo ID : </label>
+                            <div class="col-sm-9">
+                                <select class="form-control" id="categoria" name="tipo_id" style="width: 500px;">
+                                  <!--  <%
+                                        List tiposIds = (List)request.getAttribute("tipo_id");
+                                        for(int i  = 0; i < tiposIds.size(); i++){
+                                            Pessoa pessoa = (Pessoa)tiposIds.get(i);
+                                            out.print("<option value=\""+pessoa.getTipoID()+"\">"+pessoa.getTipoID()+"</option>");
+                                        }
+                                    %> -->
+                                    <option value="">BI</option>
+                                    <option value="">PASSAPORTE</option>
+                                    <option value="">CARTA DE CONDUCAO</option>
+                                </select>
+                                <input type="checkbox" name="outro_tipo" id="outro_tipo"> Novo/Outro Tipo de Documento
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Nr do ID: </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="nr_id" placeholder="Número">
+                            </div>
+                        </div>
+                        <div class="form-group antigo_tipo">
+                            <label class="col-sm-3 control-label">Genero : </label>
+                            <div class="col-sm-9">
+                                <select class="form-control" name="genero" style="width: 500px;">
+                                    <option value="MASCULINO">Masculino</option>
+                                    <option value="FEMENINO">Femenino</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Data de Nascimento: </label>
+                            <div class="col-sm-9">
+                                <input type="date" class="form-control" name="data_nascimento" placeholder="Data de Nascimento">
+                            </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                    
+                  
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                          Contacto Pessoal
+                        </a>
+                      </h3>
+                    </div>
+
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                      <div class="panel-body">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Email: </label>
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control" name="email" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Número de Celular1: </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="nr_celular1" placeholder="Número de Celular">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Número de Celular2: </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="nr_celular2" placeholder="Número de Celular">
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                            Endereço
+                          </a>
+                        </h3>
+                      </div>
+
+                    <div id="collapseThree" class="panel-collapse collapse">
+                      <div class="panel-body">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">País: </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="pais" placeholder="Pais">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Provincia: </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="provincia" placeholder="Provincia">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Cidade:  </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="cidade" placeholder="Cidade">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Rua/Avenida: </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="rua" placeholder="Rua">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Quarteirão: </label>
+                            <div class="col-sm-9">
+                                <input type="number" min="1" class="form-control" name="quarteirao" placeholder="Quarteirão">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Número da Casa: </label>
+                            <div class="col-sm-9">
+                                <input type="number" min="1" class="form-control" name="nr_casa" placeholder="Número da Casa">
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    
+
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                            Dados Sobre Parentes
+                          </a>
+                        </h3>
+                      </div>
+
+                    <div id="collapseFour" class="panel-collapse collapse">
+                      <div class="panel-body">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Nome Completo: </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="nome_parente" placeholder="Nome Completo">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Posição parental(irmão/primo/etc): </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="grau_parente" placeholder="Posição Parental">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Número de Celular 1: </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="nr_celular1_parente" placeholder="Número de Telefone">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Número de Celular 2: </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="nr_celular2_parente" placeholder="Número de Telefone">
+                            </div>
+                        </div>
+
+                        </div>
+                    </div>
+                  </div>
+                    
+
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                            Dados Professionais
+                          </a>
+                        </h3>
+                      </div>
+                    
+                    <div id="collapseFive" class="panel-collapse collapse">
+                      <div class="panel-body">
+
+                      Médico(a) <input type="checkbox" name="chk_nova_doenca" id="chk_medico">
+                      Enfermeiro(a) <input type="checkbox" name="chk_nova_doenca" id="chk_enfermeiro">
+                      Recepcionista <input type="checkbox" name="chk_nova_doenca" id="chk_recepcionista">
+
+                      <div class="form-group medico_prev">
+                          <label class="col-sm-3 control-label">Área : </label>
+                          <div class="col-sm-9">
+                              <input type="text" class="form-control" name="medico_area" placeholder="Área de Trabalho do medico">
+                          </div>
+                      </div>
+                      <div class="form-group secretaria_prev">
+                          <label class="col-sm-3 control-label">User da Secretária : </label>
+                          <div class="col-sm-9">
+                              <select class="form-control" name="user" style="width: 500px;">
+                                 <!-- <%
+                                      List doencas = (List)request.getAttribute("doencas");
+                                      for(int i  = 0; i < doencas.size(); i++){
+                                          Doenca doenca = (Doenca)doencas.get(i);
+                                          out.print("<option value=\""+doenca.getDescricao()+"\">"+doenca.getDescricao()+"</option>");
+                                      }                               
+                                  %> -->
+                                  <option value="">User1</option>
+                                  <option value="">User2</option>
+                                  <option value="">User3</option>
+                              </select>
+                          </div>
+                      </div>
+
+                    </div>
+                    </div>
+                  </div>
+                  
+                </div>
+
+
+              </div>
+
+            <div class="col-lg-3 col-sm-3">
+                <img src="../assets/img/pessoa.png" class="img img-responsive imagem-funcionario">
+                <button type="submit" class="btn btn-success pull-right">Gravar</button>
+                <button type="reset" class="btn btn-danger pull-right">Cancelar</button>
+            </div>
+          </form>
+        </div>
+
+        <div id="adicionar_user">
+          <h3 class="boldadoPersonalizado">Adicionar Usuário</h3>
+            <form class="boldado">
+                <div class="form-group" >
+                  <label for="textoHorizontal" class="control-label">Nome:</label>
+                   <input type="text" required name="nome" class="form-control" id="textoHorizontal" placeholder="Nome & Apelido" />
+                </div>
+                <div class="form-group">
+                    <label for="textoHorizontal2" class="control-label">Palavra-Passe:</label>
+                     <input type="password" required name="nome" class="form-control" id="textoHorizontal2" placeholder="Palavra Passe" />
+                </div>
+                <div class="form-group" >
+                    <label for="textoHorizontal" class="control-label">Previlégios:</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="user[role]"> Secretário
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="user[role]"> Enfermeiro 
+                         </label>
+                    </div>
+                     <div class="radio">
+                        <label>
+                          <input type="radio" name="user[role]">Administrador
+                        </label>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-success-outline fonteDescriptionSlide">Adicionar</button>
+              </form><br>
+        </div>
+
+        <div id="gestao_user">
+          <h2 class="boldadoPersonalizado">
+              Users <span class="label label-info" style="font-size: 14px">Total: </span>   
+            </h2>
+            
+            <table class="table table-striped table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">Número</th>
+                    <th style="text-align: center;">Username</th>
+                    <th style="text-align: center;">Previlegio</th>
+                    <th style="text-align: center;">Acções</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                      <td style="text-align: center;"></td>
+                      <td style="text-align: center;"></td>
+                      <td style="text-align: center;"></td>
+                      <td style="text-align: center;">
+                        <a href="" class = "btn btn-primary">
+                          <span class="glyphicon glyphicon-list"></span>
+                        </a>
+                        <a href="" class = "btn btn-success">
+                          <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                        <a href="" class = "btn btn-danger">
+                          <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                      </td>
+                      
+                    </tr>
+                      
+            </tbody>
+            </table>
+        </div>
+
+        <div id="adicionar_departamento">
+            <h2 class="boldadoPersonalizado">
+              Adicionar novo(s) departamento(s)   
+            </h2>
+            <form class="boldado">
+                <div class="form-group" >
+                  <label for="textoHorizontal" class="control-label">Nome:</label>
+                   <input type="text" name="nome" class="form-control" placeholder="Nome/Descrição" />
+                </div>
+                <div class="row">
+                  <div class="panel-group" id="accordion">
+
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+                          Adicionar Médicos
+                        </a>
+                      </h3>
+                    </div>
+
+                    <div id="collapseSix" class="panel-collapse collapse in">
+                      <div class="panel-body">
+                        
+                        <span class="col-lg-5 pull-left">
+                            <ul class="list-group">
+                              <li class="list-group-item">Cras justo odio</li>
+                              <li class="list-group-item">Dapibus ac facilisis in</li>
+                              <li class="list-group-item">Morbi leo risus</li>
+                              <li class="list-group-item">Porta ac consectetur ac</li>
+                              <li class="list-group-item">Vestibulum at eros</li>
+                            </ul>
+                        </span>
+
+                        <span class"" align="center">Adicionar</span>
+
+                        <span class="col-lg-5 pull-right">
+                            <ul class="list-group">
+                              <li class="list-group-item">Cras justo odio</li>
+                              <li class="list-group-item">Dapibus ac facilisis in</li>
+                              <li class="list-group-item">Morbi leo risus</li>
+                              <li class="list-group-item">Porta ac consectetur ac</li>
+                              <li class="list-group-item">Vestibulum at eros</li>
+                            </ul>
+                        </span>
+
+                      </div>
+                    </div>
+                  </div>
+
+                    
+                  
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">
+                          Adicionar user
+                        </a>
+                      </h3>
+                    </div>
+
+                    <div id="collapseSeven" class="panel-collapse collapse">
+                      <div class="panel-body">
+
+                        <span class="col-lg-5 pull-left">
+                            <ul class="list-group">
+                              <li class="list-group-item">Cras justo odio</li>
+                              <li class="list-group-item">Dapibus ac facilisis in</li>
+                              <li class="list-group-item">Morbi leo risus</li>
+                              <li class="list-group-item">Porta ac consectetur ac</li>
+                              <li class="list-group-item">Vestibulum at eros</li>
+                            </ul>
+                        </span>
+
+                        <span class"" align="center">Adicionar</span>
+
+                        <span class="col-lg-5 pull-right">
+                            <ul class="list-group">
+                              <li class="list-group-item">Cras justo odio</li>
+                              <li class="list-group-item">Dapibus ac facilisis in</li>
+                              <li class="list-group-item">Morbi leo risus</li>
+                              <li class="list-group-item">Porta ac consectetur ac</li>
+                              <li class="list-group-item">Vestibulum at eros</li>
+                            </ul>
+                        </span>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  </div>
+
+
+                  <button type="submit" class="btn btn-success">Gravar</button>
+              </form><br>
+        </div>
+
+        <div id="gestao_departamento">
+
+            <h2 class="boldadoPersonalizado">
+              Departamentos <span class="label label-info" style="font-size: 14px">Total: </span>   
+            </h2>
+            <p>    
+                <form method="post" action="" >
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="input-group">
+                        <input type="text" name="nome_apelido" placeholder="Descrição" class="form-control">
+                        <span class="input-group-btn">
+                          <button class="btn btn-default " type="button">Procurar</button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </form>  
+            </p>
+            
+            <table class="table table-striped table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">Número</th>
+                    <th style="text-align: center;">Departamento</th>
+                    <th style="text-align: center;">Nr de Médicos</th>
+                    <th style="text-align: center;">Acções</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                      <td style="text-align: center;"></td>
+                      <td style="text-align: center;"></td>
+                      <td style="text-align: center;"></td>
+                      <td style="text-align: center;">
+                        <a href="" class = "btn btn-primary">
+                          <span class="glyphicon glyphicon-list"></span>
+                        </a>
+                        <a href="" class = "btn btn-success">
+                          <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                        <a href="" class = "btn btn-danger">
+                          <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                      </td>
+                      
+                    </tr>
+                      
+            </tbody>
+            </table>
+        </div>
+
+      </div>
+
+      <footer>
+               <nav class="navbar navbar-full navbar-light bg-faded" style="background-color: #e3f2fd;">
+               <a class="navbar-brand boldado" href="#">Hospital</a>
+                 <ul class="nav navbar-nav boldado">
+                         <li class="nav-item">
+                          <a class="nav-link" href="#">Parceiros</a>
+                         </li>
+                      <li class="nav-item">
+                         <a class="nav-link" href="#">Siga-nos</a>
+                        </li>
+                    <li class="nav-item">
+                  <a class="nav-link" href="#">Agradecimentos</a>
+                </li>
+            </ul>
+       <p class="pull-xs-right pull-right boldado display-5">@Uncopyright 2016</p> 
+          </nav>
+      </footer>
+
+       <script type="text/javascript" src="../assets/js/jquery.min.js" ></script>
+        <script type="text/javascript" src="../assets/bootstrap/js/bootstrap.min.js" ></script>
+        <script src="../assets/bootstrap_4/bower_components/jquery/dist/jquery.min.js"></script> 
+        <script src="../assets/bootstrap_4/bower_components/bootstrap/js/src/carousel.js"></script> 
+        <script src="../assets/bootstrap_4/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+                      $(function () {
+                          $(".novo_tipo").hide();
+                          $("#outro_tipo").change(function () {
+                              if ($(this).is(":checked")) {
+                                  $(".novo_tipo").show();
+                                  $(".antigo_tipo").hide();
+                              } else {
+                                  $(".novo_tipo").hide();
+                                  $(".antigo_tipo").show();
+                              }
+                          });
+                          
+                          $(".medico_prev").hide();
+                          $(".secretaria_prev").hide();
+
+                          $("#chk_medico").change(function () {
+                              if ($(this).is(":checked")) {
+                                  $(".medico_prev").show();
+                              } else {
+                                  $(".medico_prev").hide();
+                              }
+                          });
+
+                          $("#chk_recepcionista").change(function () {
+                              if ($(this).is(":checked")) {
+                                  $(".secretaria_prev").show();
+                              } else {
+                                  $(".secretaria_prev").hide();
+                              }
+                          });
+                          
+                      });
+                  </script>
+
+
+  </body>
+
+</html>

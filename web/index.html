@@ -6,11 +6,186 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Grupo 3 Ninjas</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Bootstrap CSS -->
+        <link rel="stylesheet" href="assets/bootstrap_4/bower_components/bootstrap/dist/css/bootstrap.min.css">
+        
+        <!--CSS Customizado -->
+        <link rel="stylesheet" href="assets/css/style.css">   
     </head>
     <body>
-        <div>TODO write content</div>
+        <section id="cover">
+             <div id="cover-caption">
+                <div class="container">
+                      <div class="col-sm-10 col-sm-offset-1">
+                          <h1 class="display-2 fonteTitulo"> Bem vindo ao nosso grupo!</h1>
+                          <h3 class="fonteDescription">Disfrute da nossa aplicação e se quiser saber mais sobre nós clique a seta abaixo!
+                          </h3>
+                          <form action="login.html" class="form-inline">
+                            <button  type="submit" class="btn btn-success-outline btn-lg fonteBotao">Está bem, vamos a aplicação!</button>
+                          </form><br>
+                          <a href="#carousel" class="btn btn-secondary-outline btn-sm" role="button">&darr;</a><!-- nav-main serve para quando for a clicar mostrar a navbar -->
+                          
+                      </div>
+                 </div>
+             
+             </div>
+         </section>
+         <!-- Barra de Menu -->
+        <nav class="navbar navbar-fixed-top navbar-dark bg-inverse navbar-full fonteDescription" id="nav-main">
+                  <a class="navbar-brand" href="#cover">Grupo 3</a>
+                 <ul class="nav navbar-nav">
+                     <li class="nav-item active">
+                       <a class="nav-link" href="#">Início<span class="sr-only">(current)</span></a>
+                     </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Parceiros</a>
+                     </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">Sobre</a>
+                   </li>
+                    <li class="nav-item">
+                  <a class="nav-link" href="#">Quem somos</a>
+                </li>
+            </ul>
+             <form class="form-inline pull-xs-right">
+                 <input class="form-control" type="text" placeholder="Pesquisa aqui">
+                <button class="btn btn-success-outline" type="submit">Pesquisar</button>
+           </form>
+    </nav>
+  <!-- Barra de Menu -->
+    <!--Slide Show -->
+        <section id="carousel">
+         <div id="carousel-home" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                           <li data-target="#carousel-home" data-slide-to="0" class="active"></li>
+                           <li data-target="#carousel-home" data-slide-to="1"></li>
+                           <li data-target="#carousel-home" data-slide-to="2"></li>
+                        </ol>
+                  <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                           <img src="assets/img/programming.jpg" alt="Programing">
+                               <div class="carousel-caption">
+                                       <h2 class="fonteTituloSlide">Somos dedicados!</h2>
+                                       <h4 class="fonteDescriptionSlide">Garantimos trazer projectos de alta qualidade</h4>
+                                </div>
+                        </div>
+                        <div class="carousel-item">
+                           <img src="assets/img/working.jpg" alt="Trabalho duro">
+                             <div class="carousel-caption">
+                                       <h2 class="fonteTituloSlide">Amamos este trabalho</h2>
+                                       <h4 class="fonteDescriptionSlide">A única maneira de fazer um excelente trabalho é fazer o que  amamos fazer</h4>
+                             </div>
+                        </div>
+                       <div class="carousel-item">
+                              <img src="assets/img/chalkboard.jpg" alt="Third">
+                            <div class="carousel-caption">
+                                       <h2 class="fonteTituloSlide">Somos de confiança</h2>
+                                       <h4 class="fonteDescriptionSlide">Trabalhe connosco que estarás confiante</h4>
+                                </div>
+                       </div>
+                </div>
+                <a class="left carousel-control" href="#carousel-home" role="button" data-slide="prev">
+                   <span class="icon-prev" aria-hidden="true"></span>
+                   <span class="sr-only">Previous</span>
+              </a>
+             <a class="right carousel-control" href="#carousel-home" role="button" data-slide="next">
+                <span class="icon-next" aria-hidden="true"></span>
+               <span class="sr-only">Next</span>
+            </a>
+     </div>
+ </section>
+        <br>
+<!--Slide Show -->        
+<!--Cartas -->
+         <section id="o-que-fazemos">
+             <div class="section-content">
+                <div class="container">
+                     <h2 class="boldado">Como fazemos?</h2>
+                    <p class="fonteDescriptionSlide display-5">Densenvolvemos projectos de software com objectivo de agradar o cliente de melhor forma,te agradar, é a nossa satisfação!</p>
+                 
+                 <div class="row">
+                     <div class="col-sm-12">
+                        <div class="card-group">
+                            <div class="card">
+                                <div class="card-block ">
+                                     <h4 class="card-title boldado">Estratégia &amp; planeamento</h4>
+                                    <h6 class="card-subtitlte fonteTituloSlide ">Um grupo simples e eficaz</h6>
+                                </div>
+                                <img src="assets/img/scrum.png">
+                                <div class="card-block">
+                                     <p class="card-text fonteDescriptionSlide">De forma direta e objetiva, cada questão é apresentada, seguida da solução mais pontual e, quando cabível, uma discussão (com indicações de estudos) sobre o tema.</p>
+                                    <button type="button" class="btn btn-success-outline fonteDescriptionSlide">Saber mais</button>
+                                </div>    
+                            </div>
+                            
+                            
+                             <div class="card">
+                                  <div class="card-block">
+                                     <h4 class="card-title boldado">Ficamos preocupados com cada detalhe!</h4>
+                                    <h6 class="card-subtitlte fonteTituloSlide ">Um grupo simples e eficaz</h6>
+                                </div>
+                                <img src="assets/img/website.jpg">
+                                <div class="card-block ">
+                                     <p class="card-text fonteDescriptionSlide">Mas é exatamente essa velocidade que hoje nos mata, mas nos mostra que sim, que devemos nos unir a ela para investirmos nesses pequenos detalhes, principalmente quando o assunto é atendimento ao cliente.</p>
+                                    <button type="button" class="btn btn-success-outline fonteDescriptionSlide">Saber mais</button>
+                                </div>  
+                            </div> 
+                             <div class="card">
+                                  <div class="card-block">
+                                      <h4 class="card-title boldado">Adoramos programar em Web</h4>
+                                      <h6 class="card-subtitlte fonteTituloSlide">As linguagens usadas são as mais recentes possíveis </h6>
+                                </div>
+                                <img src="assets/img/html-css.jpg">
+                                <div class="card-block">
+                                     <p class="card-text fonteDescriptionSlide">A arte de programar para nós consiste na arte de organizar e dominar a complexidade..</p>
+                                    <button type="button" class="btn btn-success-outline fonteDescriptionSlide">Saber mais</button>
+                                </div>  
+                             </div> 
+                         
+                        </div>
+                      
+                     </div>
+                 
+                 
+                 </div>
+            </div>
+             
+             </div>
+    </section>        
+<!--Cartas -->
+        
+<!--Rodape -->
+    <footer id="footer-main">
+   <nav class="navbar navbar-full navbar-light bg-faded">
+           <a class="navbar-brand boldado" href="#">Grupo 3 Java EE</a>
+        <ul class="nav navbar-nav boldado">
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Parceiros</a>
+                     </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">Siga-nos</a>
+                   </li>
+                    <li class="nav-item">
+                  <a class="nav-link" href="#">Agradecimentos</a>
+                </li>
+            </ul>
+       <p class="pull-xs-right boldado display-5">@Uncopyright 2016</p>
+     
+       
+   </nav>
+    </footer>   
+        
+        
+<!--Rodape -->        
+        
+        
+        
+        
+        <script src="assets/bootstrap_4/bower_components/jquery/dist/jquery.min.js"></script> 
+        <script src="assets/bootstrap_4/bower_components/bootstrap/js/src/carousel.js"></script> 
+        <script src="assets/bootstrap_4/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>

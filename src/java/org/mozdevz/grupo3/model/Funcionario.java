@@ -2,6 +2,7 @@ package org.mozdevz.grupo3.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.CascadeType;
@@ -15,6 +16,12 @@ public abstract class Funcionario extends Pessoa implements Serializable{
     
     public Funcionario(){}
 
+    public Funcionario(String nome, String apelido, String tipoID, String nrID, Genero genero, Date dataNascimento, Contacto contacto, Endereco endereco) {
+        super(nome, apelido, tipoID, nrID, genero, dataNascimento, contacto, endereco);
+    }
+    
+    
+    
     @OneToMany(cascade = CascadeType.ALL)
     public List<Expediente> getExpedientes() {
         return expedientes;

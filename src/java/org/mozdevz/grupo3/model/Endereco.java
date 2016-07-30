@@ -22,6 +22,16 @@ public class Endereco implements Serializable{
     private String nrCasa;
     
     public Endereco(){}
+
+    public Endereco(String pais, String provincia, String cidade, String rua, String quarteirao, String nrCasa) {
+        this.pais = pais;
+        this.provincia = provincia;
+        this.cidade = cidade;
+        this.rua = rua;
+        this.quarteirao = quarteirao;
+        this.nrCasa = nrCasa;
+    }
+    
     
     
     @Id

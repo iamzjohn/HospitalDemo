@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <title>Grupo 3 Ninjas Hospital</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Bootstrap CSS -->
+        <link rel="stylesheet" href="assets/bootstrap_4/bower_components/bootstrap/dist/css/bootstrap.min.css">
+        
+        <!--CSS Customizado -->
+        <link rel="stylesheet" href="assets/css/style.css"> 
+   </head>
+   <body>
+        <section>
+           <nav class="navbar navbar-light  boldado navbar-full" style="background-color: #e3f2fd;">
+                <a class="navbar-brand" href="#">Hospital</a>
+               <ul class="nav navbar-nav">
+                             <li class="nav-item active">
+                                <a class="nav-link" href="#">Início<span class="sr-only">(current)</span></a>
+                            </li>
+                       <li class=" nav-item">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="medicos">Médicos<span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="medicos">
+                           <a href="#" class="dropdown-item">Adicionar um  Médico</a>
+                           <a href="#" class="dropdown-item">Pesquisar um Médico</a>
+                           <a href="#" class="dropdown-item">Eliminar um  Médico</a>
+                       </div>
+                       </li>
+                     <li class=" nav-item">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="enfermeiro">Enfermeiros<span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="enfermeiro">
+                           <a href="#" class="dropdown-item">Adicionar um  Enfermeiro</a>
+                           <a href="#" class="dropdown-item">Pesquisar um Enfermeiro</a>
+                           <a href="#" class="dropdown-item">Eliminar um  Enfermeiro</a>
+                       </div>
+                       </li>
+                   <li class=" nav-item">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="administrador">Administradores<span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="administrador">
+                           <a href="#" class="dropdown-item">Adicionar um  Administrador</a>
+                           <a href="#" class="dropdown-item">Pesquisar um Administrador</a>
+                           <a href="#" class="dropdown-item">Eliminar um Administrador</a>
+                       </div>
+                       </li>
+                   <li class=" nav-item">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="utilizador">Utilizadores<span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="utilizador">
+                           <a href="#" class="dropdown-item">Listar todos Utilizadores</a>
+                           <a href="#" class="dropdown-item">Pesquisar um Utilizador</a>
+                           <a href="#" class="dropdown-item">Eliminar um Utilizador</a>
+                       </div>
+                       </li>
+                       <li class="nav-item">
+                              <a class="nav-link" href="#">Estatísticas</a>
+                        </li>
+                     <li class="nav-item">
+                         <a class="nav-link" href="#">Sobre nós</a>
+                   </li>
+            </ul>
+    
+           <form class="form-inline pull-xs-right">
+                 <input class="form-control" type="text" placeholder="Pesquisar">
+                <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+           </form>
+           </nav>
+    </section>
+       
+       <section id="admin" >
+          <div class="section-content">
+               <div class="container">
+                   <div class="col-sm-10">
+                      <div id="Texto-de-descricao">
+                          <h2 class="boldado">Bem vindo Caro Administrador!</h2>
+                          <p class="fonteDescription">Abaixo estão as funcionalidades dísponiveis para o seu trabalho, esperamos que fique satisfeito!</p>
+                     </div>
+                   
+                   </div>
+                   
+               </div>
+          </div>  
+       
+      </section><br>
+       
+      <section>
+           <h1 class="boldado" align="center">Formulários</h1><br><br>
+             <div class="container">
+        
+             <div class="row">
+                  <div class="col-sm-5">
+                       <h3 class="boldadoPersonalizado">Adicionar Usuário</h3>
+                       <form class="boldado">
+                           <div class="form-group" >
+                                      <label for="textoHorizontal" class="control-label">Nome:</label>
+                                    <input type="text" required name="nome" class="form-control" id="textoHorizontal" placeholder="Nome & Apelido" />
+                                      
+                         </div>
+                           <div class="form-group">
+                                      <label for="textoHorizontal2" class="control-label">Palavra-Passe:</label>
+                                      <input type="password" required name="nome" class="form-control" id="textoHorizontal2" placeholder="Palavra Passe" />
+                            </div>
+                           <div class="form-group" >
+                                             <label for="textoHorizontal" class="control-label">Previlégios:</label>
+                                            <div class="radio">
+                                                 <label>
+                                                      <input type="radio" name="user[role]"> Secretário
+                                                       </label>
+                                           </div>
+                                              <div class="radio">
+                                                    <label>
+                                                      <input type="radio" name="user[role]"> Enfermeiro 
+                                                    </label>
+                                           </div>
+                                <div class="radio">
+                                               <label>
+                                                      <input type="radio" name="user[role]">Director Geral
+                                              </label>
+                                        </div>
+                                <div class="radio">
+                                               <label>
+                                                      <input type="radio" name="user[role]">Administrador
+                                              </label>
+                                        </div>
+                                      
+                            </div>
+                            <button type="submit" class="btn btn-success-outline fonteDescriptionSlide">Adicionar</button>
+                      </form><br>
+                      
+                       <h3 class="boldadoPersonalizado">Eliminar Usuário:</h3>
+                      <form action="" method="post" class="form-horizontal boldado">
+                       <div class="form-group row">
+                              <label for="eliminar" class="col-xs-2 col-form-label">Usuário:</label>
+                               <div class="col-xs-10">
+                                  <input class="form-control" required type="text" placeholder="Nome" id="eliminar">
+                               </div>
+                           
+                        </div>
+                          <div class="form-group">
+                              <div class="radio">
+                                <label>
+                                     <input type="radio" name="pessoa"> Secretário
+                                </label>
+                                           </div>
+                                     <div class="radio">
+                                        <label>
+                                          <input type="radio" name="pessoa"> Enfermeiro 
+                                        </label>
+                                    </div>
+                                <div class="radio">
+                                      <label>
+                                             <input type="radio" name="pessoa">Director Geral
+                                     </label>
+                                        </div>
+                                <div class="radio">
+                                    <label>
+                                           <input type="radio" name="pessoa">Administrador
+                                   </label>
+                                        </div>
+                          </div>
+                      
+                      <button type="submit" class="btn btn-danger-outline fonteDescriptionSlide">Eliminiar</button>
+                      
+                      </form>
+                   </div>
+                  <div class="col-sm-7">
+                        <h3 class="boldadoPersonalizado" >Registrar um Médico:</h3><br>
+                      <form action="" class="form-horizontal boldado" method="">
+                          <img src="assets/img/pessoa.png" class="img img-responsive">
+                          <fieldset class="form-group">
+                               <legend>Dados Pessoais:</legend>
+                              <div class="form-group row">
+                              <label for="example-text-input2" class="col-xs-2 col-form-label">Nome:</label>
+                               <div class="col-xs-10">
+                                    <input class="form-control" type="text"  required placeholder="Nome completo" id="example-text-input2">
+                               </div>
+                           </div>
+                       <div class="form-group row">
+                              <label for="genero" class="col-xs-2 col-form-label">Género:</label>
+                               <div class="col-xs-10">
+                                <select id="genero" name="genero">
+                                       <option>Masculino</option>
+                                       <option>Feminino</option>
+			                     </select>
+                               </div>
+                           </div>
+                              <div class="form-group row">
+                              <label for="tipo" class="col-xs-2 col-form-label">Tipo de Documento:</label>
+                               <div class="col-xs-10">
+                                <select id="tipo" name="genero" >
+                                       <option>BI</option>
+                                       <option>Cédula</option>
+                                    <option>Passaporte</option>
+			                      </select>
+                              </div>
+                           </div>
+                        <div class="form-group row">
+                                   <label for="numeroDocumento" class="col-form-label col-xs-2">Numero de Doc.:</label>
+                                   <div class="col-xs-10">
+                                         <input type=text placeholder="Numero de Documento" required class="form-control ">
+                                   </div>
+                             </div> 
+                     <div class="form-group row">
+                            <label for="idade" class="col-xs-2 col-form-label">Idade</label>
+                            <div class="col-xs-10">
+                              <input class="form-control" type="number" required placeholder="14" id="idade">
+                            </div>
+                        </div>
+                      
+                     </fieldset> 
+                          <img src="assets/img/telefone.png" class="img img-responsive" >
+                  <fieldset>
+                         <legend>Contacto:</legend>
+                              <div class="form-group row">
+                                <label for="example-email-input" class="col-xs-2 col-form-label">Email:</label>
+                                  <div class="col-xs-10">
+                                  <input class="form-control" type="email" placeholder="hospital@exemplo.com" id="example-email-input">
+                           </div>
+                         </div>
+                                <div class="form-group row">
+                                 <label for="tel" class="col-xs-2 col-form-label">Telemóvel:</label>
+                                     <div class="col-xs-10">
+                                        <input class="form-control" required type="text" placeholder="82/84*******" id="tel">
+                                     </div>
+                            </div>
+                 </fieldset>
+                          <fieldset>
+                         <legend>Endereço:</legend>
+                              <div class="form-group row">
+                                <label for="example-email-input" class="col-xs-2 col-form-label">Província:</label>
+                                  <div class="col-xs-10">
+                                <select id="tipo" name="" >
+                                       <optgroup label="Região Sul:" class="fonteTituloSlide">
+				                            <option>Maputo</option>
+				                           <option>Gaza</option>
+					                       <option>Inhambane</option>
+					                 </optgroup>
+				                   <optgroup label="Região Centro" class="fonteTituloSlide">
+				                         <option>Manica</option>
+				                         <option>Sofala</option>
+					                      <option>Tete</option>
+				                   </optgroup>
+				                   <optgroup label="Região Norte:" class="fonteTituloSlide">
+				                        <option>Zambézia</option>
+				                       <option>Nampula</option>
+					                   <option>Niassa</option>
+					                    <option>Cabo Delgado</option>
+				                    </optgroup>
+			                      </select>
+                              </div>
+                                 
+                              </div>
+                             <div class="form-group row">
+                              <label for="avenida" class="col-xs-2 col-form-label">Avenida/Rua:</label>
+                               <div class="col-xs-10">
+                                    <input class="form-control" type="text" required placeholder="Eduardo Mondlane" id="avenida">
+                               </div>
+                           </div>
+                                 <div class="form-group row">
+                                            <label for="example-number-input" class="col-xs-2 col-form-label">Casa nº:</label>
+                                             <div class="col-xs-10">
+                                           <input class="form-control" required type="numero" placeholder="12" id="example-number-input">
+                                     </div>
+                            </div>
+                         </fieldset>
+                         <fieldset class="form-group">
+                             <legend>Dados Profissionais:</legend>
+                             <div class="form-group row">
+                        <label for="especialidades" class="col-xs-2 col-form-label">Especialidade:</label>
+                             <select id="especialidades" name="especialidade">
+                                      <option>Anatomia Patológica</option>
+                                    <option>Anestesiologia</option>
+                                    <option>Angiologia e Cirurgia Vascular</option>
+                                    <option>Cardiologia</option>
+                                    <option>Cardiologia Pediátrica</option>
+                                    <option>Cirurgia Cardiotorácica</option>
+                                    <option>Cirurgia Geral</option>
+                                    <option>Cirurgia Maxilo-Facial</option>
+                                    <option>Cirurgia Pediátrica</option>
+                                    <option>Cirurgia Plástica Reconstrutiva e Estética</option>
+                                    <option>Dermato-Venereologia</option>
+                                    <option>Doenças Infecciosas</option>
+                                    <option>Endocrinologia e Nutrição</option>
+                                    <option>Estomatologia</option>
+                                    <option>Gastrenterologia</option>
+                                    <option>Genética Médica</option>
+                                    <option>Ginecologia/Obstetrícia</option>
+                                    <option>Imunoalergologia</option>
+                                    <option>Imunohemoterapia</option>
+                             
+                             
+                                </select>
+                          </div>
+                                
+                          
+                          
+                          </fieldset>
+                               <button  type="submit" class="btn btn-success-outline fonteDescriptionSlide">Registrar</button>
+                      </form><br>
+                  </div>
+               
+          
+           </div><br>
+        </div> 
+       
+      </section>
+       <footer>
+               <nav class="navbar navbar-full navbar-light bg-faded" style="background-color: #e3f2fd;">
+               <a class="navbar-brand boldado" href="#">Hospital</a>
+                 <ul class="nav navbar-nav boldado">
+                         <li class="nav-item">
+                          <a class="nav-link" href="#">Parceiros</a>
+                         </li>
+                      <li class="nav-item">
+                         <a class="nav-link" href="#">Siga-nos</a>
+                        </li>
+                    <li class="nav-item">
+                  <a class="nav-link" href="#">Agradecimentos</a>
+                </li>
+            </ul>
+       <p class="pull-xs-right boldado display-5">@Uncopyright 2016</p>
+     
+       
+   </nav>
+
+       
+      </footer>
+       <script type="text/javascript" src="assets/js/jquery.min.js" ></script>
+        <script type="text/javascript" src="'assets/bootstrap/js/bootstrap.min.js" ></script>
+        <script src="assets/bootstrap_4/bower_components/jquery/dist/jquery.min.js"></script> 
+        <script src="assets/bootstrap_4/bower_components/bootstrap/js/src/carousel.js"></script> 
+        <script src="assets/bootstrap_4/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+
+</html>

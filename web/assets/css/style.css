@@ -1,0 +1,106 @@
+html,
+body{
+    height: 100%;
+}
+
+/* Fontes usadas */
+@font-face{
+font-family:'SkarpaLt';
+src:url("../fonts/SkarpaLt.ttf");
+}
+@font-face{
+font-family:'SkarpaLt-Bold';
+src:url("../fonts/Skarpa_Bold.ttf");
+}
+
+/* Covers */
+#cover{
+    background: #222 url('../img/stage.jpg') center no-repeat;
+    background-size: cover;
+    color:white;
+    height: 100%;
+    text-align:center;
+    display: flex;
+    align-items: center;
+    
+}
+#cover-caption{
+    width: 100%;
+}
+#cover2{
+     background: #222 url('../img/hospital.jpg') center no-repeat;
+    background-size: cover;
+    color:white;
+    height: 100%;
+    text-align:center;
+    display: flex;
+    align-items: center;
+}
+
+.fonteTitulo{
+    font-family:'SkarpaLt';
+    color:white;
+}
+.fonteDescription{
+    font-family:'SkarpaLt';
+    color:black;
+}
+.fonteBotao{
+    font-family:'SkarpaLt';
+    color:white;
+}
+.fonteTituloSlide{
+    font-family:'SkarpaLt';
+    color:crimson;
+}
+.fonteDescriptionSlide{
+  font-family:'SkarpaLt';
+    color:black;
+}
+img {
+    max-width: 100%;
+}
+.boldado{
+    font-family:'SkarpaLt-Bold';
+    color:black;
+}
+
+.section content{
+    padding: 5rem 0;
+}
+
+#recepcao{
+    background: url('../img/medico.jpg') center no-repeat;
+    background-size: cover;
+    height:70%;
+    width: 100%;
+     text-align:right;
+   
+}
+
+#admin{
+    background: url('../img/admin.jpg') center no-repeat;
+    background-size: cover;
+    height:70%;
+    width: 100%;
+     text-align:right;
+   
+}
+#Texto-de-descricao{
+    width: 100%;
+    float:right;
+}
+
+.boldadoPersonalizado{
+    font-family:'SkarpaLt-Bold';
+    color:crimson;
+}
+
+div#procurar_paciente{
+    padding-top: 2em;
+}
+
+div#marcacao_consulta{
+    padding-bottom: 2em;
+}
+

@@ -20,6 +20,14 @@ public class Contacto implements Serializable{
     
     public Contacto(){}
 
+    public Contacto(String email, String nrCelular, String nrCelular2) {
+        this.email = email;
+        this.nrCelular = nrCelular;
+        this.nrCelular2 = nrCelular2;
+    }
+    
+    
+
     @Id
     @GenericGenerator(name = "gerador-chave", strategy = "increment")
     @GeneratedValue(generator = "gerador-chave")

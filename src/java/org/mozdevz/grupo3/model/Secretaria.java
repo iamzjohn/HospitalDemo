@@ -13,6 +13,7 @@ import javax.persistence.TemporalType;
 public class Secretaria extends Funcionario implements Serializable{
     private Date dataCriacao;
     
+    
     public Secretaria() {
     }
 

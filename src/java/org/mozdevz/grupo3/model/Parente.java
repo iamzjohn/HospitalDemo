@@ -18,6 +18,15 @@ public class Parente implements Serializable{
     
     private Parente(){}
 
+    public Parente(String nome, String posicaoParental, String nrCelular1, String nrCelular2) {
+        this.nome = nome;
+        this.posicaoParental = posicaoParental;
+        this.nrCelular1 = nrCelular1;
+        this.nrCelular2 = nrCelular2;
+    }
+
+    
+    
     @Id
     @GenericGenerator(name = "gerador-chave", strategy = "increment")
     @GeneratedValue(generator = "gerador-chave")

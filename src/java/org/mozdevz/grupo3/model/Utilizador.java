@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 
 @Entity
@@ -22,6 +23,7 @@ public class Utilizador implements java.io.Serializable {
     private Previlegio previlegio;
     private String usuario;
     private String senha;
+    private Departamento departamento;
     private List<LogUtilizador> logUtilizadores = new ArrayList<>();
 
     public Utilizador() {
@@ -78,5 +80,16 @@ public class Utilizador implements java.io.Serializable {
     public void setLogUtilizadores(List<LogUtilizador> logUtilizadores) {
         this.logUtilizadores = logUtilizadores;
     }
+
+    @Transient
+    public Departamento getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(Departamento departamento) {
+        this.departamento = departamento;
+    }
+    
+    
 
 }

@@ -29,7 +29,9 @@
                 </h2>
             </div>
             <div>
-                <form class="form-horizontal" method="post" action="">
+                
+                
+                <form class="form-horizontal" method="post" action="/HospitalDemo/doente.do">
                     <h3>Dados do Paciente</h3>
                     <div class="form-group">
                         <label class="col-sm-3 control-label">Nome: </label>
@@ -40,7 +42,7 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">Apelido: </label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="apelido"placeholder="Äpelido">
+                            <input type="text" class="form-control" name="apelido"placeholder="Apelido">
                         </div>
                     </div>
                     <div class="form-group novo_tipo" >
@@ -73,7 +75,7 @@
                     <div class="form-group antigo_tipo">
                         <label class="col-sm-3 control-label">Genero : </label>
                         <div class="col-sm-9">
-                            <select class="form-control" name="tipo_id" style="width: 500px;">
+                            <select class="form-control" name="genero" style="width: 500px;">
                                 <option value="MASCULINO">Masculino</option>
                                 <option value="FEMENINO">Femenino</option>
                             </select>
@@ -94,13 +96,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Númeor de Celular1: </label>
+                        <label class="col-sm-3 control-label">Número de Celular1: </label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" name="nr_celular1" placeholder="Número de Celular">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Númeor de Celular2: </label>
+                        <label class="col-sm-3 control-label">Número de Celular2: </label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" name="nr_celular2" placeholder="Número de Celular">
                         </div>
@@ -126,7 +128,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Rua: </label>
+                        <label class="col-sm-3 control-label">Rua/Avenida: </label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" name="rua" placeholder="Rua">
                         </div>
@@ -134,13 +136,13 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">Quarteirão: </label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="quarteirao" placeholder="Quarteirão">
+                            <input type="number" min="1" class="form-control" name="quarteirao" placeholder="Quarteirão">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label">Número da Casa: </label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="nr_casa" placeholder="Número da Casa">
+                            <input type="number" min="1" class="form-control" name="nr_casa" placeholder="Número da Casa">
                         </div>
                     </div>
                     
@@ -203,7 +205,7 @@
                                     List medicos = (List)request.getAttribute("medicos");
                                     for(int i  = 0; i < medicos.size(); i++){
                                         Medico medico = (Medico)medicos.get(i);
-                                        out.print("<option value=\""+medico.getNome()+"\">"+medico.getApelido().toUpperCase() +"- " + medico.getNome()+"</option>");
+                                        out.print("<option value=\""+medico.getId()+"\">"+medico.getApelido().toUpperCase() +"- " + medico.getNome()+"</option>");
                                     }                               
                                 %>
                             </select>

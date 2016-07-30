@@ -12,7 +12,7 @@ public class MedicoServico {
     private MedicoServico() {
     }
 
-    public static Medico criarUtilizador() {
+    public static Medico criarMedico() {
         Medico medico = new Medico();
 //        consulta.setData(Utilitarios.agora());
         return medico;

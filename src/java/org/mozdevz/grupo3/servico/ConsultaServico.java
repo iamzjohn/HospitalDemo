@@ -1,8 +1,10 @@
 package org.mozdevz.grupo3.servico;
 
+import java.util.Calendar;
 import java.util.List;
 import org.mozdevz.grupo3.dao.ConsultaDAO;
 import org.mozdevz.grupo3.model.Consulta;
+import org.mozdevz.grupo3.model.Doente;
 import org.mozdevz.grupo3.util.Utilitarios;
 
 public class ConsultaServico {
@@ -87,5 +89,25 @@ public class ConsultaServico {
             consultaDAO.fecharSessao();
         }
         return consultas;
+    }
+    
+     public List<Consulta> buscarTodasDoente(Calendar diaInicio, Calendar diaFim, String nomeDoente) {
+        List<Consulta> consultasDoente = null;
+        List<Doente> doentesAux = null, doentes = null;
+        doentes = DoenteServico.buscarPorNomeOuApelido(nomeDoente);
+        ConsultaDAO consultaDAO = new ConsultaDAO();
+        
+        try{
+            for (Doente doente : doentes) {
+                consultasDoente = consultaDAO.buscarTodasNumaData(diaInicio, diaFim, doente);
+            }
+        } catch(Exception ex){
+            System.out.println(ex.getMessage());
+        } finally{
+            consultaDAO.fecharSessao();
+        }
+        
+        
+        return consultasDoente;
     }
 }

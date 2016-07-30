@@ -40,6 +40,32 @@ public abstract class Pessoa implements Serializable{
     
     public Pessoa(){}
 
+    public Pessoa(String nome, String apelido, String tipoID, String nrID, Genero genero, Date dataNascimento) {
+        this.nome = nome;
+        this.apelido = apelido;
+        this.tipoID = tipoID;
+        this.nrID = nrID;
+        this.genero = genero;
+        this.dataNascimento = dataNascimento;
+        this.contacto = null;
+        this.endereco = null;
+    }
+    
+    
+
+    public Pessoa(String nome, String apelido, String tipoID, String nrID, Genero genero, Date dataNascimento, Contacto contacto, Endereco endereco) {
+        this.nome = nome;
+        this.apelido = apelido;
+        this.tipoID = tipoID;
+        this.nrID = nrID;
+        this.genero = genero;
+        this.dataNascimento = dataNascimento;
+        this.contacto = contacto;
+        this.endereco = endereco;
+    }
+    
+    
+
     @Id
     @GenericGenerator(name = "gerador-chave", strategy = "increment")
     @GeneratedValue(generator = "gerador-chave")
@@ -77,6 +103,7 @@ public abstract class Pessoa implements Serializable{
         this.tipoID = tipoID;
     }
 
+    @Column(name="nr_id")
     public String getNrID() {
         return nrID;
     }

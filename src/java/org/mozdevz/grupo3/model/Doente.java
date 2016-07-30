@@ -2,6 +2,7 @@ package org.mozdevz.grupo3.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.CascadeType;
@@ -19,6 +20,19 @@ public class Doente extends Pessoa implements Serializable{
     
     public Doente(){}
 
+    public Doente(String nomePai, String nomeMae, String nome, String apelido, String tipoID, String nrID, Genero genero, Date dataNascimento, Contacto contacto, Endereco endereco) {
+        super(nome, apelido, tipoID, nrID, genero, dataNascimento, contacto, endereco);
+        this.nomePai = nomePai;
+        this.nomeMae = nomeMae;
+    }
+
+    public Doente(String nome, String apelido, String tipoID, String nrID, Genero genero, Date dataNascimento) {
+        super(nome, apelido, tipoID, nrID, genero, dataNascimento);
+    }
+    
+    
+
+    
 
     @Column(name = "nome_do_pai")
     public String getNomePai() {

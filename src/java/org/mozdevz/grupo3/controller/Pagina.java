@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.mozdevz.grupo3.servico.ConsultaServico;
 import org.mozdevz.grupo3.servico.GeradorCodigosServico;
 import org.mozdevz.grupo3.servico.MedicoServico;
@@ -34,7 +35,7 @@ public class Pagina extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
          RequestDispatcher view;
-         view = request.getRequestDispatcher("error.html");
+         view = request.getRequestDispatcher("/error.html");
          view.forward(request, response);
     }
 
@@ -70,6 +71,16 @@ public class Pagina extends HttpServlet {
 //        }
         
         view.forward(request, response);
+        
+        
+        
+//        CENAS PARA AUMENTAR
+//          HttpSession session = request.getSession();
+//          session.setAttribute("user", user);
+//          session.setAttribute("departamento", departamento);
+//            Object o = (Object) session.getAttribute("");
+
+//        response.sendRedirect(""); 
     }
 
     /**

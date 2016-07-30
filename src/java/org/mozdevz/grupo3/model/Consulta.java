@@ -3,6 +3,7 @@ package org.mozdevz.grupo3.model;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -27,6 +28,16 @@ public class Consulta implements Serializable{
     public Consulta() {
         
     }
+
+    public Consulta(Date data, Date hora, Secretaria secretaria, Medico medico, Doente doente) {
+        this.data = data;
+        this.hora = hora;
+        this.secretaria = secretaria;
+        this.medico = medico;
+        this.doente = doente;
+    }
+    
+    
 
     @Id
     @GenericGenerator(name = "gerador-chave", strategy = "increment")
@@ -61,7 +72,7 @@ public class Consulta implements Serializable{
     
     
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     public Secretaria getSecretaria() {
         return secretaria;
     }
@@ -70,7 +81,7 @@ public class Consulta implements Serializable{
         this.secretaria = secretaria;
     }
 
-     @OneToOne(fetch = FetchType.EAGER)
+     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     public Medico getMedico() {
         return medico;
     }
