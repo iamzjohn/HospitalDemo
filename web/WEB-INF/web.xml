@@ -13,6 +13,10 @@
         <servlet-class>org.mozdevz.grupo3.controller.Cadastro</servlet-class>
     </servlet>
     <servlet-mapping>
+        <servlet-name>Cadastro</servlet-name>
+        <url-pattern>/cadastrar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/entrar</url-pattern>
     </servlet-mapping>
@@ -30,6 +34,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>login.html</welcome-file>
+        <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 </web-app>
