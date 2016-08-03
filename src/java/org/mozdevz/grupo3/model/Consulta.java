@@ -16,7 +16,7 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name = "ficha_medica")
+@Table(name = "ficha_medica", catalog = "hospital_db")
 public class Consulta implements Serializable{
     private Long id;
     private Date data;
@@ -72,7 +72,7 @@ public class Consulta implements Serializable{
     
     
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public Secretaria getSecretaria() {
         return secretaria;
     }
@@ -81,7 +81,7 @@ public class Consulta implements Serializable{
         this.secretaria = secretaria;
     }
 
-     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public Medico getMedico() {
         return medico;
     }
@@ -90,7 +90,7 @@ public class Consulta implements Serializable{
         this.medico = medico;
     }
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public Doente getDoente() {
         return doente;
     }

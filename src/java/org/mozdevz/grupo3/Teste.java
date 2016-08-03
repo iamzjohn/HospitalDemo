@@ -15,5 +15,8 @@ public class Teste {
         
         MedicoServico.guardar(m);
         
+        m = (Medico) MedicoServico.buscarPorID(1);
+        System.out.println(m.getNome());
+//        System.out.println();
     }
 }

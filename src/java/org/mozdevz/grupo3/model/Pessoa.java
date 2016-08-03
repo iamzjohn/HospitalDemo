@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
@@ -17,6 +18,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.hibernate.annotations.GenericGenerator;
@@ -24,9 +26,11 @@ import org.mozdevz.grupo3.util.Utilitarios;
 
 
 @Entity
+//@MappedSuperclass
+@Table(name = "pessoa", catalog = "hospital_db")
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Pessoa implements Serializable{   
-    private Long id;
+    private Integer id;
     private String nome;
     private String apelido;
     private String tipoID;
@@ -70,11 +74,11 @@ public abstract class Pessoa implements Serializable{
     @GenericGenerator(name = "gerador-chave", strategy = "increment")
     @GeneratedValue(generator = "gerador-chave")
     @Column(name = "id", unique = true, nullable = false)
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -121,7 +125,7 @@ public abstract class Pessoa implements Serializable{
         this.genero = genero;
     }
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "pessoa_id")
     public List<Parente> getParentes() {
         return parentes;

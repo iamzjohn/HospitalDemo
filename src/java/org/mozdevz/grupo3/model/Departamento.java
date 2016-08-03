@@ -12,10 +12,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 
 @Entity
+@Table(name = "departamento", catalog = "hospital_db")
+
 public class Departamento implements Serializable{
     private Long id;
     private String descricao;
@@ -45,7 +48,7 @@ public class Departamento implements Serializable{
         this.descricao = descricao;
     }
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "secretaria_id")
     public List<Secretaria> getSecretarias() {
         return secretarias;
@@ -65,7 +68,7 @@ public class Departamento implements Serializable{
         this.medicos = medicos;
     }
     
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "consulta_id")
     public List<Consulta> getConsultas() {
         return consultas;
@@ -75,9 +78,6 @@ public class Departamento implements Serializable{
         this.consultas = consultas;
     }
     
-    
-    
-
     @Override
     public int hashCode() {
         int hash = 7;

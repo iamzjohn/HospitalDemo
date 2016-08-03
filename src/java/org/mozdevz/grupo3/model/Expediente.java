@@ -6,17 +6,20 @@ import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
+@Table(name = "expediente", catalog = "hospital_db")
 public class Expediente implements Serializable{
     private Integer id;
     private Date diaEntrada;
     private Date diaSaida;
     private Date horaEntrada;
-    private Date HoraSaida;
+    private Date horaSaida;
+    
     
     public Expediente(){}
 
@@ -60,11 +63,11 @@ public class Expediente implements Serializable{
 
     @Temporal(TemporalType.TIME)
     public Date getHoraSaida() {
-        return HoraSaida;
+        return horaSaida;
     }
 
     public void setHoraSaida(Date HoraSaida) {
-        this.HoraSaida = HoraSaida;
+        this.horaSaida = HoraSaida;
     }
 
   

@@ -37,8 +37,7 @@ public abstract class DAOAbstracto<T> {
         this.classeEntidade = null;
         this.sessao = sessao;
     }
-    
-    
+
 
     private void abrirSessao() {
         sessao = NewHibernateUtil.getSessionFactory().openSession();

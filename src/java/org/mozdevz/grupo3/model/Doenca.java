@@ -5,9 +5,11 @@ import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
+@Table(name = "doenca", catalog = "hospital_db")
 public class Doenca implements Serializable{
     private Integer id;
     private String descricao;

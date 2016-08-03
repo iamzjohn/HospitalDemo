@@ -8,12 +8,17 @@ import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
 
 
 @Entity
+@Table(name = "doente", catalog = "hospital_db")
 public class Doente extends Pessoa implements Serializable{
+//    Long id;
     private String nomePai;
     private String nomeMae;
     private List<Doenca> doencas = new ArrayList<>();
@@ -29,11 +34,21 @@ public class Doente extends Pessoa implements Serializable{
     public Doente(String nome, String apelido, String tipoID, String nrID, Genero genero, Date dataNascimento) {
         super(nome, apelido, tipoID, nrID, genero, dataNascimento);
     }
-    
-    
 
+//    @Id
+//    @GenericGenerator(name = "gerador-chave", strategy = "increment")
+//    @GeneratedValue(generator = "gerador-chave")
+//    @Column(name = "id", unique = true, nullable = false)
+//    @Override
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    @Override
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
     
-
     @Column(name = "nome_do_pai")
     public String getNomePai() {
         return nomePai;
@@ -52,7 +67,7 @@ public class Doente extends Pessoa implements Serializable{
         this.nomeMae = nomeMae;
     }
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "doenca_id")
     public List<Doenca> getDoencas() {
         return doencas;

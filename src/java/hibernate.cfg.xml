@@ -18,7 +18,7 @@
     <property name="hibernate.format_sql">true</property>
     <property name="hibernate.connection.autocommit">false</property>
     <!--Apagar ou recriar a base de dados na sua inicialização-->
-    <property name="hibernate.hbm2ddl.auto">update</property>
+    <property name="hibernate.hbm2ddl.auto">create</property>
     <!--Outras configurações-->
     <property name="hibernate.enable_lazy_load_no_trans">true</property>
     <property name="connection.pool_size">1</property>
