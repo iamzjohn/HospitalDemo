@@ -379,12 +379,17 @@
             <h2 class="boldadoPersonalizado">
               Doentes <span class="label label-info" style="font-size: 14px">Total: </span>   
             </h2>
-            <p>    
-                <form method="post" action="" >
+            <<p>    
+                <form method="post" action="/HospitalDemo/SearchDoente" >
                   <div class="row">
                     <div class="col-lg-6">
                       <div class="input-group">
-                        <input type="text" name="nome_apelido" placeholder="Nome ou apelido" class="form-control">
+                        <input type="text" name="search-value" placeholder="Descrição" class="form-control">
+                        <select class="form-control" name="medico_catch" style="width: 500px;">
+                                <option value="Nome_ou_apelido">Nome ou Apelido</option>
+                                <option value="ID">ID</option>
+                                <!--<option value="">Nr de Telefone</option>-->
+                            </select>
                         <span class="input-group-btn">
                           <button class="btn btn-default " type="button">Procurar</button>
                         </span>
@@ -481,11 +486,5 @@
             });
         </script>
   </body>
-
-
-
-
-
-
 
 </html>

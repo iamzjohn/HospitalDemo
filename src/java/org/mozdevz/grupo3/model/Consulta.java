@@ -26,7 +26,6 @@ public class Consulta implements Serializable{
     private Doente doente;
 
     public Consulta() {
-        
     }
 
     public Consulta(Date data, Date hora, Secretaria secretaria, Medico medico, Doente doente) {

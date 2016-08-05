@@ -8,10 +8,10 @@ package org.mozdevz.grupo3.controller;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import org.mozdevz.grupo3.model.Utilizador;
 import org.mozdevz.grupo3.servico.ConsultaServico;
 import org.mozdevz.grupo3.servico.GeradorCodigosServico;
@@ -23,6 +23,7 @@ import org.mozdevz.grupo3.servico.UtilizadorServico;
  *
  * @author zJohn
  */
+@WebServlet("/pagina")
 public class Pagina extends HttpServlet {
 
     /**
@@ -58,19 +59,19 @@ public class Pagina extends HttpServlet {
 //        
         String username = request.getParameter("username");
         String senha = request.getParameter("password");
-//        
-        Utilizador user = UtilizadorServico.login(username, senha);
-        if(user != null){
-            request.setAttribute("usuario", user);
-            request.setAttribute("nr_ficha", GeradorCodigosServico.gerarCodigo(GeradorCodigosServico.DOENTE, ConsultaServico.total()));
-            request.setAttribute("tipo_id", PessoaServico.buscarTiposDocumentos());
-            request.setAttribute("doencas", PessoaServico.buscarDoencas());
-            request.setAttribute("medicos", MedicoServico.buscarTodos());
+        
+//        Utilizador user = UtilizadorServico.login(username, senha);
+//        if(user != null){
+//            request.setAttribute("usuario", user);
+//            request.setAttribute("nr_ficha", GeradorCodigosServico.gerarCodigo(GeradorCodigosServico.DOENTE, ConsultaServico.total()));
+//            request.setAttribute("tipo_id", PessoaServico.buscarTiposDocumentos());
+//            request.setAttribute("doencas", PessoaServico.buscarDoencas());
+//            request.setAttribute("medicos", MedicoServico.buscarTodos());
             
-            view = request.getRequestDispatcher("administracaoVersaoHTML.html");
-        }else{
-            view = request.getRequestDispatcher("error.html");
-        }
+            view = request.getRequestDispatcher("recepcaoVersaoHTML.html");
+//        }else{
+//            view = request.getRequestDispatcher("error.html");
+//        }
         
         view.forward(request, response);
         

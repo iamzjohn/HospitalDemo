@@ -35,37 +35,32 @@ public class SearchDoente extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String nome = request.getParameter("");
-        String escolhaTipo = request.getParameter("");
-        String dataDe = request.getParameter("");
-        String dataAte = request.getParameter("");
         
+         RequestDispatcher view;
+         view = request.getRequestDispatcher("/error.html");
+        //Preciso saber a página que recebe paramentos para preencher aqui
+        String descricao = (String) request.getParameter("nome");
+        String escolhaTipo = (String) request.getParameter("medico_catch");
+//        String dataDe = request.getParameter("");
+//        String dataAte = request.getParameter("");
         
-        
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-//            /* TODO output your page here. You may use following sample code. */
-//            out.println("<!DOCTYPE html>");
-//            out.println("<html>");
-//            out.println("<head>");
-//            out.println("<title>Servlet SearchDoente</title>");            
-//            out.println("</head>");
-//            out.println("<body>");
-//            out.println("<h1>Servlet SearchDoente at " + request.getContextPath() + "</h1>");
-//            out.println("</body>");
-//            out.println("</html>");
+        if(escolhaTipo.isEmpty()){
+             view = request.getRequestDispatcher("/error.html");
+        }else if(escolhaTipo.equalsIgnoreCase("Nome_ou_apelido") || escolhaTipo.equalsIgnoreCase("Nome ou apelido")){
+            request.setAttribute("Doentes", DoenteServico.buscarPorNomeOuApelido(descricao));
+            request.setAttribute("total", DoenteServico.total());
+            view = request.getRequestDispatcher("");
+        }else if(escolhaTipo.equalsIgnoreCase("ID")){
+            request.setAttribute("Doentes", DoenteServico.buscarPorIdentificacao(descricao));
+            request.setAttribute("total", DoenteServico.total());
+            view = request.getRequestDispatcher("");
         }
+        view.forward(request, response);
+        
     }
+    
+   
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -83,22 +78,7 @@ public class SearchDoente extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher view;
-        
-        String filtro = request.getParameter("filtro");
-//        String opcao = request.getParameter("selececao");
-        List<Doente> doentes = null;
-        
-//        if(opcao.equalsIgnoreCase("nome")){
-            doentes = DoenteServico.buscarPorNomeOuApelido(filtro);
-//        }else if(opcao.equalsIgnoreCase("bi")){
-//            doentes = (List<Doente>) DoenteServico.buscarPorIdentificacao(opcao);
-//        }
-        
-        request.setAttribute("doentes", doentes);
-        
-        view = request.getRequestDispatcher("");
-        view.forward(request, response);
+         processRequest(request, response);
     }
 
     /**

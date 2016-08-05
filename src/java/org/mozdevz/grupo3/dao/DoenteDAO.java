@@ -55,22 +55,13 @@ public class DoenteDAO extends DAOAbstracto<Doente>{
         return (Doente) criteriaDoente.uniqueResult();
     }
     
-//    public List<Vd> buscarTodasNaoAnuladas(Cliente cliente, Calendar diaInicio, Calendar diaFim) {
-//        Criteria criteriaVD = sessao.createCriteria(Vd.class);
-//        criteriaVD.add(Restrictions.eq("anulada", false));
-//        criteriaVD.add(Restrictions.eq("clienteId", cliente.getId()));
-//
-//        diaInicio.set(diaInicio.get(Calendar.YEAR), diaInicio.get(Calendar.MONDAY), diaInicio.get(Calendar.DATE),
-//                0, 0, 0);
-//        criteriaVD.add(Restrictions.ge("dataEmissao", diaInicio.getTime()));
-//
-//        diaFim.set(diaFim.get(Calendar.YEAR), diaFim.get(Calendar.MONDAY), diaFim.get(Calendar.DATE),
-//                0, 0, 0);
-//        diaFim.add(Calendar.DAY_OF_YEAR, 1);
-//        criteriaVD.add(Restrictions.lt("dataEmissao", diaFim.getTime()));
-//
-//        criteriaVD.addOrder(Order.desc("dataEmissao"));
-//        return criteriaVD.lisxt();
-//    }
-    
+     public Doente buscarPorNrTelefone(String nrCell) {
+        Criteria criteriaDoente = sessao.createCriteria(Doente.class);
+        Criterion criterionNome = Restrictions.like("nr_celular", nrCell, MatchMode.ANYWHERE);
+        Criterion criterionApelido = Restrictions.like("nr_celular2", nrCell, MatchMode.ANYWHERE);
+        LogicalExpression expressaoOU = Restrictions.or(criterionNome, criterionApelido);
+        criteriaDoente.add(expressaoOU);
+        return (Doente) criteriaDoente.uniqueResult();
+    }
+
 }
